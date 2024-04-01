@@ -1,28 +1,34 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main(int argc,char *argv[] )
+int main(int argc,char *argv[])
 {
-        int n,max,min,*arr,i;  	
-	printf("enter the number of integers \n");
-	scanf("%d",&n);
-	arr=(int *) malloc (n * sizeof(int));
-	printf("enter %d integers \n",n);
-	for (i=0;i<n;i++)
-	{
-		scanf("%d",&arr[i]);
-	}
-	max=arr[0];
-	min=arr[0];
-	for(i=0;i<n;i++)
-	{
-		if(arr[i]>max)
-		{
-		      max=arr[i];
-		}
-		if(arr[i]<min)
-		{
-			min=arr[i];
-		}
-        }
-	printf("maximum number is = %d \nminimum number is = %d\n",max,min);
+int num1,num2,num3,min,max,sum;
+float avg;
+if(argc!=4)
+{
+	printf("\n invalid number of arguments");
+}
+num1=atoi(argv[1]);
+num2=atoi(argv[2]);
+num3=atoi(argv[3]);
+if (num1<num2 && num1<num3)
+{
+	printf("min :%d\n",num1);
+}else if (num2<num1 && num2<num3)
+{
+   printf("min :%d\n",num2);
+}else{
+	printf("min : %d\n",num3);
+}
+if (num1>num2 && num1>num3)
+{
+	printf("max :%d\n",num1);
+}else if (num2>num1 && num2>num3)
+{
+   printf("max :%d\n",num2);
+}else{
+	printf("max : %d\n",num3);
+
+}
+printf("average :%.2f\n",((float)num1+num2+num3)/3);
 }
